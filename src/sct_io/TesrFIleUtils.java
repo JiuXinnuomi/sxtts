@@ -6,7 +6,7 @@ import java.io.*;
  * 测试封装IO流
  */
 
-public class FIleUtils {
+public class TesrFIleUtils {
 
     public static void main(String[] args) {
 

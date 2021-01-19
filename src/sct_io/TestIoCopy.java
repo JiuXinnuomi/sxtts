@@ -13,7 +13,16 @@ public class TestIoCopy {
         //1.创建源
         File abc = new File("src/sct_io/images/abc.txt");
         File dest = new File("src/sct_io/images/dest.txt");
-        fileCopy(abc,dest);
+//        fileCopy(abc,dest);
+
+        try {
+            Reader reader = new FileReader(abc);
+            Writer writer = new FileWriter(dest);
+            fileCopy02(reader,writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /*IO字节流文件拷贝 ★★★*/
@@ -50,7 +59,24 @@ public class TestIoCopy {
     }
 
     /*文件夹的拷贝*/
+    public static void folderCopy(){
+
+    }
 
     /*IO字符流文件拷贝*/
+    public static void fileCopy02(Reader reader,Writer writer){
+
+        //3.操作
+        try(reader;writer) {
+            char[] flush = new char[20];
+            int len = -1;
+            while ((len = reader.read(flush)) != -1){
+                writer.write(flush,0,len);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

@@ -6,7 +6,7 @@ import java.io.*;
  * 测试图片存入字节数组，再由字节数组输出为图片 ★★★★★
  */
 
-public class TestIoLink {
+public class TestIoImg {
 
     public static void main(String[] args) {
 
